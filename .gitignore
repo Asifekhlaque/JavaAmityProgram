@@ -1,0 +1,17 @@
+# Ignore Java class files
+*.class
+
+# Ignore log files
+*.log
+
+# Ignore BlueJ files
+*.ctxt
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore compiled output directories
+/bin/
+/out/
+/target/
