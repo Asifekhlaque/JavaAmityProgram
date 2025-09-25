@@ -1,45 +1,40 @@
+// Write a java program to calculate the persentage obtain in five subject by five student . if  the persentage is grater than 80% give a bonus marks of 10 else if it is greater than 75% and less 5 marks is added to the student otherwise no bonus marks
 
-// Write a program to enter the name and marks of 5 students. If the marks are less than 80 and greater than 75, increase it by 10. If the marks are greater than 80, increase it by 5.
 import java.util.Scanner;
 
 public class ques3 {
     public static void main(String[] args) {
-        int marks[] = new int[5];
-        String stuname;
-        int temp;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the name");
-        stuname = sc.next();
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Enter the marks");
-            marks[i] = sc.nextInt();
-        }
-        for (int i = 0; i < 5; i++) {
-            temp = marks[i];
-            if (temp < 80 && temp > 75) {
 
-                System.out.println("Marks < 80 && Marks > 75 : " + temp);
-                temp = temp + 10;
-                marks[i] = temp;
-            }
-            if (temp > 80) {
-                temp = temp + 5;
-                if (temp > 100) {
-                    temp = 100;
-                    marks[i] = temp;
-                } else {
-                    
-                    marks[i] = temp;
-                }
-                System.out.println("Marks >80 : " + temp);
+        int students = 5;
+        int subjects = 5;
 
+        for (int i = 1; i <= students; i++) {
+            int total = 0;
+            System.out.println("\nEnter marks for Student " + i + ":");
+            for (int j = 1; j <= subjects; j++) {
+                System.out.print("Subject " + j + ": ");
+                int marks = sc.nextInt();
+                total += marks;
             }
+
+            double percentage = (total / (subjects * 100.0)) * 100; // out of 100
+            int bonus = 0;
+
+            if (percentage >= 80) {
+                bonus = 10;
+            } else if (percentage >= 75) {
+                bonus = 5;
+            }
+
+            int finalMarks = total + bonus;
+
+            System.out.println("Student " + i + " Total Marks: " + total);
+            System.out.println("Percentage: " + percentage + "%");
+            System.out.println("Bonus Marks: " + bonus);
+            System.out.println("Final Marks (with bonus): " + finalMarks);
         }
-        System.out.println("Name : " + stuname);
-        System.out.println("New Marks");
-        for (int j = 0; j < 5; j++) {
-            System.out.println(marks[j]);
-        }
+
         sc.close();
     }
 }

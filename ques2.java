@@ -8,10 +8,8 @@ public class ques2 {
         System.out.println("Enter the number");
         num = sc.nextInt();
         System.out.println("Even numbers are: ");
-        for (int i = 1; i < num; i++) {
-            if (i % 2 == 0) {
-                System.out.println(i);
-            }
+        for (int i = 2; i < num; i=i+2) {
+            System.out.println(i);
         }
         sc.close();
     }
